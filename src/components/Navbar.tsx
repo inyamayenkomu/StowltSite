@@ -25,7 +25,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 sm:gap-3">
             <div className="rounded-xl overflow-hidden shadow-sm">
               <Image
-                src="/logo.png"
+                src={`${process.env.NODE_ENV === 'production' ? '/StowltSite' : ''}/logo.png`}
                 alt="Stowlt"
                 width={50}
                 height={50}

@@ -112,21 +112,21 @@ const testimonials = [
     role: "Olomouc",
     quote:
       "Konečně mám doma prostor! Všechny naše lyže a kola jsou bezpečně uložené a já mám volný balkon.",
-    image: "/review-female-1.png",
+    image: `${process.env.NODE_ENV === 'production' ? '/StowltSite' : ''}/review-female-1.png`,
   },
   {
     name: "Martin Svoboda",
     role: "Olomouc",
     quote:
       "Skvělá služba pro naši rodinu. Profesionální přístup a hlavně bezpečno. Doporučuji všem!",
-    image: "/review-male.png",
+    image: `${process.env.NODE_ENV === 'production' ? '/StowltSite' : ''}/review-male.png`,
   },
   {
     name: "Jana Dvořáková",
     role: "Olomouc",
     quote:
       "Stěhovali jsme se a potřebovali dočasné úložiště. Stowlt nám to perfektně vyřešil.",
-    image: "/review-female-2.png",
+    image: `${process.env.NODE_ENV === 'production' ? '/StowltSite' : ''}/review-female-2.png`,
   },
 ];
 

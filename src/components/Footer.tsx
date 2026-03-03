@@ -59,7 +59,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="rounded-xl overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src={`${process.env.NODE_ENV === 'production' ? '/StowltSite' : ''}/logo.png`}
                   alt="Stowlt"
                   width={50}
                   height={50}
