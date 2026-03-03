@@ -2,25 +2,50 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1A1A1A;
+  
+  /* Stowlt Brand Colors */
+  --stowlt-orange: #F5A623;
+  --stowlt-orange-dark: #E09000;
+  --stowlt-orange-light: #FFD080;
+  --stowlt-blue: #5B7FA3;
+  --stowlt-blue-dark: #4A6B8A;
+  --stowlt-blue-light: #8AADD4;
+  --stowlt-dark: #1A1A1A;
+  --stowlt-gray: #6B7280;
+  --stowlt-light-gray: #F3F4F6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  
+  /* Stowlt Colors */
+  --color-stowlt-orange: var(--stowlt-orange);
+  --color-stowlt-orange-dark: var(--stowlt-orange-dark);
+  --color-stowlt-orange-light: var(--stowlt-orange-light);
+  --color-stowlt-blue: var(--stowlt-blue);
+  --color-stowlt-blue-dark: var(--stowlt-blue-dark);
+  --color-stowlt-blue-light: var(--stowlt-blue-light);
+  --color-stowlt-dark: var(--stowlt-dark);
+  --color-stowlt-gray: var(--stowlt-gray);
+  --color-stowlt-light-gray: var(--stowlt-light-gray);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--stowlt-orange-light);
+  color: var(--stowlt-dark);
 }
