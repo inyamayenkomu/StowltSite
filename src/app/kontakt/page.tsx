@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import BlobShape from "@/components/BlobShape";
 import Button from "@/components/Button";
-
-const Map = dynamic(() => import("@/components/Map"), { ssr: false });
+import Map from "@/components/Map";
 
 export default function KontaktPage() {
   const [formData, setFormData] = useState({
