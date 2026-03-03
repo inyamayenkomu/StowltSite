@@ -1,8 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import BlobShape from "@/components/BlobShape";
 import Button from "@/components/Button";
+
+const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 export default function PobockyPage() {
   return (
@@ -39,50 +42,15 @@ export default function PobockyPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
-            {/* Map Placeholder */}
+            {/* Interactive Map */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative aspect-square lg:aspect-[4/3] bg-stowlt-light-gray rounded-3xl overflow-hidden"
+              className="relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-lg"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-stowlt-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-10 h-10 text-stowlt-blue"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-stowlt-gray">
-                    Interaktivní mapa
-                    <br />
-                    <span className="text-sm">(bude brzy k dispozici)</span>
-                  </p>
-                </div>
-              </div>
-              {/* Decorative blob */}
-              <BlobShape
-                variant="2"
-                className="absolute -bottom-20 -right-20 w-[300px] h-[300px] opacity-20"
-                color="var(--stowlt-blue)"
-              />
+              <Map />
             </motion.div>
 
             {/* Location Info */}
@@ -146,7 +114,7 @@ export default function PobockyPage() {
                         Adresa
                       </h3>
                       <p className="text-stowlt-gray">
-                        Průmyslová 123
+                        Tomkova 45/314
                         <br />
                         779 00 Olomouc
                         <br />

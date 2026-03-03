@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import BlobShape from "@/components/BlobShape";
 import Button from "@/components/Button";
+
+const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 export default function KontaktPage() {
   const [formData, setFormData] = useState({
@@ -292,7 +295,7 @@ export default function KontaktPage() {
                       Adresa
                     </h3>
                     <p className="text-stowlt-gray">
-                      Průmyslová 123
+                      Tomkova 45/314
                       <br />
                       779 00 Olomouc
                       <br />
@@ -340,38 +343,9 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="h-64 sm:h-80 lg:h-96 bg-stowlt-light-gray relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-20 h-20 bg-stowlt-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                className="w-10 h-10 text-stowlt-blue"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-            <p className="text-stowlt-gray text-lg">
-              Interaktivní mapa
-              <br />
-              <span className="text-sm">(bude brzy k dispozici)</span>
-            </p>
-          </div>
-        </div>
+      {/* Interactive Map */}
+      <section className="h-64 sm:h-80 lg:h-96 relative">
+        <Map />
       </section>
     </div>
   );
