@@ -39,14 +39,14 @@ export default function PobockyPage() {
       {/* Location Card */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-stretch">
             {/* Interactive Map */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-lg"
+              className="relative min-h-[300px] sm:min-h-[400px] rounded-3xl overflow-hidden shadow-lg"
             >
               <Map />
             </motion.div>
